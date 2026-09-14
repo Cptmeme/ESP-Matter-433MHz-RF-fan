@@ -1,0 +1,25 @@
+CONFIG_IDF_TARGET="esp32c6"
+
+# ---------------------------------------------------------------------------
+# Matter-over-Thread (no Wi-Fi). This overlay is auto-applied after
+# sdkconfig.defaults for the esp32c6 target, so it wins any conflicts while the
+# base file still provides the cluster selection (incl. FAN_CONTROL) and trimming.
+# ---------------------------------------------------------------------------
+
+# Use the 802.15.4 radio / OpenThread stack
+CONFIG_OPENTHREAD_ENABLED=y
+CONFIG_OPENTHREAD_SRP_CLIENT=y
+CONFIG_OPENTHREAD_DNS_CLIENT=y
+CONFIG_OPENTHREAD_LOG_LEVEL_DYNAMIC=n
+CONFIG_OPENTHREAD_LOG_LEVEL_NOTE=y
+CONFIG_OPENTHREAD_CLI=n
+
+# Disable Wi-Fi station (BLE stays enabled for commissioning)
+CONFIG_ENABLE_WIFI_STATION=n
+
+# LwIP / mDNS tuning for OpenThread
+CONFIG_LWIP_IPV6_AUTOCONFIG=n
+CONFIG_LWIP_IPV6_NUM_ADDRESSES=8
+CONFIG_LWIP_MULTICAST_PING=y
+CONFIG_USE_MINIMAL_MDNS=n
+CONFIG_ENABLE_EXTENDED_DISCOVERY=y

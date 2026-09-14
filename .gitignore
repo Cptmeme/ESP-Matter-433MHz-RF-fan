@@ -1,0 +1,11 @@
+# ESP-IDF build output
+build/
+managed_components/
+sdkconfig.old
+
+# Editor / tooling
+.vscode/
+.clangd
+.cache/
+.claude/
+.DS_Store
