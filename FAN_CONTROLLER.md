@@ -161,7 +161,7 @@ export IDF_PYTHON_CHECK_CONSTRAINTS=no
 # export IDF_CCACHE_ENABLE=1   # OK now that ccache is fixed
 . ~/.espressif/v5.5.4/esp-idf/export.sh
 . ~/.espressif/esp-matter/export.sh
-cd ~/esp/esp-matter-fan
+cd ~/esp/ESP-Matter-433MHz-RF-fan
 idf.py set-target esp32c6   # first time only (or after deleting build/)
 idf.py build
 ```
@@ -222,7 +222,7 @@ Verified in the built image: `chip_enable_openthread = true`,
 ## 9. Flash, commission, verify
 
 ```bash
-cd ~/esp/esp-matter-fan
+cd ~/esp/ESP-Matter-433MHz-RF-fan
 idf.py -p <PORT> flash monitor
 ```
 (with the same env setup as the build script above.)
